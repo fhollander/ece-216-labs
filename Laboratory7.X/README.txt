@@ -1,0 +1,11 @@
+Name: Forest Davis-Hollander, Chunliang Tao
+Email:fdavisho@u.rochester.edu, ctao4@u.rochester.edu
+Date:14 November 2019
+
+We affirm that we have not given or received any unauthorized help on this assignment, and that this work is our own.
+
+This program uses UART2 to communicate with a workstation using an external Matlab script. The program receives a series of ASCII values along with string of either "Overdamped" or Underdamped" character by character from Matlab to PIC32. Then it activates and controls the motor by specifying Kp and Ki values according to different mode. While the motor is running, the state machine function from the previous lab reads from the encoder on the motor, and the current angle is determined and sent over UART2 back to the workstation. Additionally, the PI controller from the last lab will cause the motor to move to a reference angle with either overdamped or underdamped behavior, depending on the Ki and Kp values specified.
+
+Note that we used Pin 72 for our signal from OC1 which was sent to the PWM / D2 channel for motor M1. Pin 12 was wired to yellow wire on encoder, and Pin 14 wired to white wire on encoder. We followed the standard configuration for the rest of the setup as described in the lab manual, with the exception of connecting M1IN1 to P25 and connecting M1IN2 to P24 for direction control.
+
+Additional notes: This program overall seems to work, however we have noticed that there seems to be a conflict with our timers that causes our program to read the value of the degrees very slowly. In other words, the timer conflict seems to cause our program to think it is reading a much smaller value of degrees than is actually rotated by the motor. While the program works well within the bounds of this strange issue, the actual physical degrees do not match with that read by the encoder. For the Matlab code, the name of the port will need to be changed depending on which workstation is used. The code can be run for either overdamped or underdamped case, but one part simply has to be commented and the other uncommented, as only one can be run at a time.

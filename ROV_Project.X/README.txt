@@ -10,3 +10,6 @@ For wiring to the servo motor, we setup up the Micro Maestro 6-Channel USB Servo
 Note that for the power supply from 9V battery power, we used 4 15ohm resistors and 1 10ohm resistor all in paralell as a voltage divider in between the battery and the servo motor. This gave a resistance of 2.7272ohms, allowing for about 1.1A to be supplied to the servo from the 9V battery, given that the servo can only run at 6V (so the resistors dissipate the remaining 3V).
 
 We connected pins 12 and 14 to yellow and white lines on the gearmotor 1 encoder and pins 83 and 84 to yellow and white lines on the gearmotor 2 encoder. Green lines on both encoders are connected to GND and blue lines on both encoders are connected to +5V. M1OUT2 and M2OUT2 were connected to motor power (red) and M1OUT1 and M2OUT1 were connected to motor power (black). Pins 25, 24 were connected to M1IN1, M1IN2 for motor 1 and pins 21, 20 were connected to M2IN1, M2IN2 for motor 2. PWMs were used for both motors with pin 72 connected to PWM M1D1 and pin 78 connected to PWM M2D1. All other connections with the H-bridge motor driver circuit were connected per the instructions in lab 5.
+
+
+Video link: https://youtu.be/3f1Nag199zM
